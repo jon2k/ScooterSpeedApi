@@ -49,7 +49,7 @@ namespace ScooterSpeedApi
             {
                 services.AddDbContext<ScooterSpeedContext>(options =>
                 {
-                    options.UseSqlServer(Configuration.GetConnectionString("OrderDatabase"));
+                    options.UseNpgsql(Configuration.GetConnectionString("ScooterSpeedDatabase"));
                 });
             }
             else

@@ -16,6 +16,7 @@ namespace ScooterSpeedApi.Data.Database
         public ScooterSpeedContext(DbContextOptions<ScooterSpeedContext> options)
             : base(options)
         {
+            Database.EnsureCreated();
             //var orders = new[]
             //{
             //    new Order
