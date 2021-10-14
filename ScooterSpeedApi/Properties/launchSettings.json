@@ -16,7 +16,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "OrderApi": {
+    "ScooterSpeedApi": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
