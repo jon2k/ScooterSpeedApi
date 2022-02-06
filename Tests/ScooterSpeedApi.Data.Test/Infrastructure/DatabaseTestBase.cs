@@ -10,7 +10,9 @@ namespace ScooterSpeedApi.Data.Test.Infrastructure
 
         public DatabaseTestBase()
         {
-            var options = new DbContextOptionsBuilder<ScooterSpeedContext>().UseInMemoryDatabase(Guid.NewGuid().ToString()).Options;
+            var options = new DbContextOptionsBuilder<ScooterSpeedContext>()
+                .UseInMemoryDatabase(Guid.NewGuid().ToString())
+                .Options;
 
             Context = new ScooterSpeedContext(options);
 

@@ -57,11 +57,19 @@ namespace ScooterSpeedApi.Data.Database
 
             modelBuilder.Entity<ScooterSpeed>(entity =>
             {
-                entity.Property(e => e.Speed).IsRequired();
-                entity.Property(e => e.Time).IsRequired();
-                entity.Property(e => e.CoordinateX).IsRequired();
-                entity.Property(e => e.CoordinateY).IsRequired();
-                entity.Property(e => e.ScooterId).IsRequired();
+                entity.Property(e => e.Id)
+                    .IsRequired()
+                    .ValueGeneratedNever();
+                entity.Property(e => e.Speed)
+                    .IsRequired();
+                entity.Property(e => e.Time)
+                    .IsRequired();
+                entity.Property(e => e.CoordinateX)
+                    .IsRequired();
+                entity.Property(e => e.CoordinateY)
+                    .IsRequired();
+                entity.Property(e => e.ScooterId)
+                    .IsRequired();
             });
         }
     }

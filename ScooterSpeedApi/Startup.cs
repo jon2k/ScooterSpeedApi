@@ -50,6 +50,7 @@ namespace ScooterSpeedApi
                 services.AddDbContext<ScooterSpeedContext>(options =>
                 {
                     options.UseNpgsql(Configuration.GetConnectionString("ScooterSpeedDatabase"));
+                    options.LogTo(Console.WriteLine);
                 });
             }
             else
@@ -101,8 +102,6 @@ namespace ScooterSpeedApi
 
             services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
             services.AddTransient<IScooterSpeedRepository, ScooterSpeedRepository>();
-            
-
             services.AddTransient<IRequestHandler<GetLastSpeedScooterQuery, ScooterSpeed>, GetLastSpeedScooterQueryHandler>();
             services.AddTransient<IRequestHandler<GetSpeedsScooterFromPeriodQuery, List<ScooterSpeed>>, GetSpeedsScooterFromPeriodQueryHandler>();
             services.AddTransient<IRequestHandler<GetSpeedsAllScootersQuery, List<ScooterSpeed>>, GetSpeedsAllScootersQueryHandler>();

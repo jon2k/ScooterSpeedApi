@@ -25,7 +25,7 @@ namespace ScooterSpeedApi.Data.Test.Repository.v1
             _testee = new Repository<ScooterSpeed>(Context);
             _newScooterSpeed = new ScooterSpeed
             {
-                
+                Id = Guid.NewGuid(),
                 Speed = 40,
                 Time = DateTime.Now,
                 CoordinateX = 50,
@@ -46,7 +46,8 @@ namespace ScooterSpeedApi.Data.Test.Repository.v1
         {
             A.CallTo(() => _scooterSpeedContext.SaveChangesAsync(default)).Throws<Exception>();
 
-            _testeeFake.Invoking(x => x.AddAsync(new ScooterSpeed())).Should().Throw<Exception>().WithMessage("entity could not be saved Exception of type 'System.Exception' was thrown.");
+            _testeeFake.Invoking(x => x.AddAsync(new ScooterSpeed())).Should().Throw<Exception>()
+                .WithMessage("entity could not be saved Exception of type 'System.Exception' was thrown.");
         }
 
         [Fact]
@@ -72,7 +73,8 @@ namespace ScooterSpeedApi.Data.Test.Repository.v1
         {
             A.CallTo(() => _scooterSpeedContext.Set<ScooterSpeed>()).Throws<Exception>();
 
-            _testeeFake.Invoking(x => x.GetAll()).Should().Throw<Exception>().WithMessage("Couldn't retrieve entities Exception of type 'System.Exception' was thrown.");
+            _testeeFake.Invoking(x => x.GetAll()).Should().Throw<Exception>()
+                .WithMessage("Couldn't retrieve entities Exception of type 'System.Exception' was thrown.");
         }
 
        

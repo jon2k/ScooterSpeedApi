@@ -4,7 +4,7 @@ namespace ScooterSpeedApi.Service.v1.Models
 {
     public class Scooter
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public int ScooterId { get; set; }
         public bool InUse { get; set; }
         public byte ChargePercent { get; set; }

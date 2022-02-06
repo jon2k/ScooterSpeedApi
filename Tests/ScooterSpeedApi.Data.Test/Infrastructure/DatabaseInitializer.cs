@@ -23,7 +23,7 @@ namespace ScooterSpeedApi.Data.Test.Infrastructure
             {
                 new ScooterSpeed
                 {
-                    Id = 1,
+                    Id = Guid.NewGuid(),
                     Speed = 20,
                     Time = DateTime.Now,
                     CoordinateX = 60,
@@ -32,7 +32,7 @@ namespace ScooterSpeedApi.Data.Test.Infrastructure
                 },
                 new ScooterSpeed
                 {
-                    Id = 2,
+                    Id = Guid.NewGuid(),
                     Speed = 25,
                     Time = DateTime.Now,
                     CoordinateX = 60,
@@ -41,7 +41,7 @@ namespace ScooterSpeedApi.Data.Test.Infrastructure
                 },
                 new ScooterSpeed
                 {
-                    Id = 3,
+                    Id = Guid.NewGuid(),
                     Speed = 30,
                     Time = DateTime.Now,
                     CoordinateX = 60,

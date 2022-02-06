@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using ScooterSpeedApi.Data.Database;
 
 namespace ScooterSpeedApi.Data.Repository.v1
@@ -18,7 +19,7 @@ namespace ScooterSpeedApi.Data.Repository.v1
         {
             try
             {
-                return ScooterSpeedContext.Set<TEntity>();
+                return ScooterSpeedContext.Set<TEntity>().AsNoTracking();
             }
             catch (Exception ex)
             {

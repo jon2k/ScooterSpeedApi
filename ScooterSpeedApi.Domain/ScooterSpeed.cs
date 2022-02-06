@@ -4,7 +4,7 @@ namespace ScooterSpeedApi.Domain
 {
     public class ScooterSpeed
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public int ScooterId { get; set; }
         public double CoordinateX { get; set; }
         public double CoordinateY { get; set; }

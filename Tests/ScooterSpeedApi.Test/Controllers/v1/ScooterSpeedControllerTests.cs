@@ -30,7 +30,7 @@ namespace ScooterSpeedApi.Test.Controllers.v1
             {
                 new()
                 {
-                    Id = 1,
+                    Id = Guid.NewGuid(),
                     Speed = 55,
                     Time = DateTime.Now,
                     CoordinateX = 60,
@@ -39,7 +39,7 @@ namespace ScooterSpeedApi.Test.Controllers.v1
                 },
                 new()
                 {
-                    Id = 2,
+                    Id = Guid.NewGuid(),
                     Speed = 60,
                     Time = DateTime.Now,
                     CoordinateX = 60,

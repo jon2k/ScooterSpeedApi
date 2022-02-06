@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using ScooterSpeedApi.Data.Repository.v1;
@@ -17,6 +18,7 @@ namespace ScooterSpeedApi.Service.v1.Command
 
         public async Task<ScooterSpeed> Handle(CreateScooterSpeedCommand request, CancellationToken cancellationToken)
         {
+            request.ScooterSpeed.Id=Guid.NewGuid();
             return await _scooterSpeedRepository.AddAsync(request.ScooterSpeed);
         }
     }
